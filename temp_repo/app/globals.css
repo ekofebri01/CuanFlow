@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* dark: mengikuti class .dark di <html> (diset dari cookie), bukan setting OS */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #eef3f0;
+  --surface: #ffffff;
+  --ink: #15302a;
+  --muted: #5b6f69;
+  --line: #d5e0db;
+  --income: #1b8457;
+  --expense: #c23b34;
+}
+
+.dark {
+  --bg: #0e1916;
+  --surface: #16241f;
+  --ink: #e4eeea;
+  --muted: #8fa59e;
+  --line: #26382f;
+  --income: #4cc08a;
+  --expense: #f07167;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
